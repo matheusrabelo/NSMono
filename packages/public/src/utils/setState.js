@@ -5,4 +5,4 @@ export default async (ctx, next) => {
         messagesService,
     };
     await next();
-}
+};

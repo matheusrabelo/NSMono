@@ -4,11 +4,11 @@ import logger from '../utils/logger';
 
 const targetValidate = (schema, target) => {
     const validations = [];
-    Object.keys(schema).forEach(field => {
+    Object.keys(schema).forEach((field) => {
         const value = schema[field];
         const validation = Joi.validate(target[field], value, { abortEarly: false });
         if (validation && validation.error) {
-            const message = validation.error.message;
+            const { message } = validation.error;
             validations.push({ field, message });
         }
     });
@@ -21,7 +21,7 @@ const requestValidate = (schema, ctx) => {
         ctx.status = status.BAD_REQUEST;
         ctx.body = {
             error: 'Request validation error',
-            validations
+            validations,
         };
         logger.log('Request validate error', { validations });
         return false;
@@ -36,7 +36,7 @@ const responseValidate = (schema, ctx) => {
     }
 };
 
-export default (schema) => async (ctx, next) => {
+export default schema => async (ctx, next) => {
     const valid = requestValidate(schema, ctx);
     if (valid) {
         await next();

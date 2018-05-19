@@ -1,6 +1,7 @@
 import status from 'http-status';
 import logger from '../utils/logger';
 
+// eslint-disable-next-line
 export const getHealthcheck = async (ctx) => {
     try {
         const dependenciesStatus = await Promise.all([
@@ -13,7 +14,7 @@ export const getHealthcheck = async (ctx) => {
             ctx.status = status.OK;
             return;
         }
-    
+
         ctx.status = status.INTERNAL_SERVER_ERROR;
     } catch (err) {
         logger.log('Healthcheck error', { err: err.message });

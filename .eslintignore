@@ -1,2 +1,2 @@
 *.js
-!packages/**/src/*.js
+!packages/public/src/**/*.js

@@ -6,4 +6,4 @@ export default {
         ctx.status = status.INTERNAL_SERVER_ERROR;
         logger.log('Body parser Error', { err: err.message });
     },
-}
+};

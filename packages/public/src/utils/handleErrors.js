@@ -1,5 +1,5 @@
-import logger from './logger';
 import status from 'http-status';
+import logger from './logger';
 
 export default async (ctx, next) => {
     try {

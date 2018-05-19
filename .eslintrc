@@ -11,6 +11,9 @@
   "rules": {
     "require-yield": "off",
     "func-names": "off",
-    "indent": ["error", 4]
+    "indent": ["error", 4],
+    "linebreak-style": "off",
+    "no-return-await": "off",
+    "arrow-body-style": "off"
   }
 }
