@@ -2,7 +2,8 @@
 	"name": "nsmono",
 	"scripts": {
 		"build": "lerna run --parallel -- build",
-		"lint": "eslint packages/**/src/*.js"
+		"lint": "eslint packages/**/src/*.js",
+		"test": "npm run lint"
 	},
 	"repository": {
 		"type": "git",
