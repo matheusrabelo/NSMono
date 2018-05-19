@@ -1,4 +1,5 @@
 import koaRouter from 'koa-router';
+import status from 'http-status';
 
 import validate from './utils/validate';
 import * as healthcheckHandler from './handlers/healthcheck';
@@ -11,7 +12,7 @@ const router = koaRouter();
 router.get(
     '/helloworld',
     async (ctx) => {
-        ctx.status = 201;
+        ctx.status = status.OK;
         ctx.body = 'Hello world!';
     },
 );
