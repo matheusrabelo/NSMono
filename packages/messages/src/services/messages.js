@@ -1,10 +1,7 @@
-import axios from 'axios';
 import status from 'http-status';
-import util from 'util';
 import fs from 'fs';
 import path from 'path';
 
-import config from '../config';
 import logger from '../utils/logger';
 import * as sqs from '../utils/sqs';
 import * as database from '../database';
@@ -19,7 +16,7 @@ export const create = async (message) => {
     }
     const { text, cron } = message;
     const insertedMessage = await database.query(createMessageQuery, [text, cron]);
-    const id = insertedMessage.rows[0].id;
+    const { id } = insertedMessage.rows[0];
     return Object.assign(message, { id });
 };
 

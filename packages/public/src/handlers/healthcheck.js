@@ -5,7 +5,7 @@ import logger from '../utils/logger';
 export const getHealthcheck = async (ctx) => {
     try {
         const dependenciesStatus = await Promise.all([
-            ctx.state.messagesService.getHealthcheck()
+            ctx.state.messagesService.getHealthcheck(),
         ]);
 
         ctx.body = dependenciesStatus;
