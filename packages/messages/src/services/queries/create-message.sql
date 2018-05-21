@@ -1,5 +1,6 @@
 INSERT INTO messages (
-    "text"
+    "text",
+    "cron",
 )
-VALUES ($1)
+VALUES ($1, $2)
 RETURNING ("id");

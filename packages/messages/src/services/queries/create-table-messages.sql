@@ -2,5 +2,6 @@ DROP TABLE IF EXISTS messages;
 
 CREATE TABLE IF NOT EXISTS messages ( 
     id SERIAL PRIMARY KEY, 
+    cron VARCHAR(256) NOT NULL,
     text VARCHAR(1024) NOT NULL
 );

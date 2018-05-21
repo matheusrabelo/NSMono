@@ -6,14 +6,19 @@ import path from 'path';
 
 import config from '../config';
 import logger from '../utils/logger';
+import * as sqs from '../utils/sqs';
 import * as database from '../database';
 
 const createMessageQuery = fs.readFileSync(path.join(__dirname, './queries/create-message.sql')).toString();
 const getAllMessagesQuery = fs.readFileSync(path.join(__dirname, './queries/get-all-messages.sql')).toString();
 
 export const create = async (message) => {
-    const { text } = message;
-    const insertedMessage = await database.query(createMessageQuery, [text]);
+    if (!message.cron) {
+        await sqs.sendMessage(message);
+        return message;
+    }
+    const { text, cron } = message;
+    const insertedMessage = await database.query(createMessageQuery, [text, cron]);
     const id = insertedMessage.rows[0].id;
     return Object.assign(message, { id });
 };
