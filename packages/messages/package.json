@@ -1,0 +1,33 @@
+{
+  "name": "nsmono-messages-api",
+  "version": "0.0.0",
+  "description": "messages api",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon devServer.js",
+    "debug": "nodemon --inspect=30000 devServer.js",
+    "build": "babel src -d dist",
+    "pm2": "pm2 start server.js -i 0",
+    "server": "npm run build && npm run pm2"
+  },
+  "author": "Matheus Freire Rabelo",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "dotenv": "^5.0.1",
+    "http-status": "^1.1.0",
+    "joi": "^13.3.0",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "pg": "^7.4.3",
+    "pm2": "^2.10.4"
+  }
+}
