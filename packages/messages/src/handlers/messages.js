@@ -3,7 +3,7 @@ import logger from '../utils/logger';
 
 export const postMessage = async (ctx) => {
     try {
-        const message = await ctx.state.messagesService.create(ctx.message);
+        const message = await ctx.state.messagesService.create(ctx.request.body);
         ctx.status = status.CREATED;
         ctx.body = message;
     } catch (err) {

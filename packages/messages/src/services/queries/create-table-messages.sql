@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS messages;
+
+CREATE TABLE IF NOT EXISTS messages ( 
+    id SERIAL PRIMARY KEY, 
+    text VARCHAR(1024) NOT NULL
+);
