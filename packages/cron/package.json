@@ -1,0 +1,26 @@
+{
+  "name": "nsmono-cron",
+  "version": "0.0.0",
+  "description": "cron",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon devServer.js",
+    "build": "babel src -d dist",
+    "server": "npm run build && node server.js"
+  },
+  "author": "Matheus Freire Rabelo",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.243.1",
+    "babel-polyfill": "^6.26.0",
+    "cron": "^1.3.0",
+    "dotenv": "^5.0.1",
+    "pg": "^7.4.3"
+  }
+}
