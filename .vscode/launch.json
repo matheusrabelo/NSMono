@@ -11,6 +11,14 @@
             "restart": true,
             "protocol": "inspector",
             "port": 30000
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Messages",
+            "restart": true,
+            "protocol": "inspector",
+            "port": 30001
         }
     ]
 }

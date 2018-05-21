@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon devServer.js",
-    "debug": "nodemon --inspect=30000 devServer.js",
+    "debug": "nodemon --inspect=30001 devServer.js",
     "build": "babel src -d dist",
     "pm2": "pm2 start server.js -i 0",
     "server": "npm run build && npm run pm2"
