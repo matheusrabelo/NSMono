@@ -7,11 +7,11 @@ const messages = axios.create({
 });
 
 export const create = async (message) => {
-    return await messages.post('/', message);
+    return await messages.post('/messages', message);
 };
 
 export const getAll = async () => {
-    return await messages.get('/');
+    return await messages.get('/messages');
 };
 
 export const getHealthcheck = async () => {
