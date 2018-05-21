@@ -2,6 +2,8 @@
 
 ## Just a POC
 
+![Diagram](diagram.jpg)
+
 ### TODO: Improve readme
 
 ## License
