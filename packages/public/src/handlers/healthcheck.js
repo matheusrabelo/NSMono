@@ -10,7 +10,7 @@ export const getHealthcheck = async (ctx) => {
 
         ctx.body = dependenciesStatus;
 
-        if (status.every(e => (e.status === status.OK))) {
+        if (dependenciesStatus.every(e => (e.status === status.OK))) {
             ctx.status = status.OK;
             return;
         }
