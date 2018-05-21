@@ -2,3 +2,4 @@
 !packages/public/src/**/*.js
 !packages/messages/src/**/*.js
 !packages/cron/src/**/*.js
+!packages/consumer/src/**/*.js
